@@ -1,0 +1,4 @@
+scheme,nominal_channels,edge_guard_equiv,control_channels,traffic_channels,payload_efficiency,effective_channel_equiv
+FDMA,80,1,2,77,0.855,65.835
+TDMA,80,8,2,70,0.6734769230769231,47.14338461538462
+TDMA_light_overhead,80,8,2,70,0.921,64.47

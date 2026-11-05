@@ -1,0 +1,5 @@
+deployment,base_winner,winner_flips,tests
+D1_cellular_voice,OFDMA,0,12
+D2_tactical,CDMA,0,12
+D3_stadium,OFDMA,0,12
+D4_sensors,OFDMA,0,12
