@@ -1,0 +1,4 @@
+items,quality_levels,cache_sizes,exact_configurations_evaluated,exact_item_evaluations,adaptive_configurations_evaluated,adaptive_item_evaluations,quality_changes,cache_evictions,adaptive_to_exact_cost_ratio
+50,4,4,16,800,10,500,1,1,1.0
+200,8,8,64,12800,10,2000,1,1,1.0
+1000,16,16,256,256000,10,10000,1,1,1.0

@@ -1,0 +1,17 @@
+B2 – ADVERSARIAL WORKLOAD INVESTIGATION
+
+Prediction before execution:
+Workload B is expected to require more scheduling evaluations because records arrive during
+repeated poor-network, low-battery and Doze periods. The same pending records are rechecked
+until a feasible window opens.
+
+Workload A has good connectivity and 70% battery throughout, so few or no records should
+be deferred.
+
+Interpretation:
+The input size is 40 records in both cases. Effort differs because the alignment between arrival
+times and feasible execution windows differs. The difficult workload causes repeated constraint
+checks and deferred scheduling attempts. Record count alone is therefore not a sufficient measure
+of computational or energy cost.
+
+These are simulated scheduler decisions, not physical radio or battery measurements.

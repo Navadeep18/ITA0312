@@ -1,0 +1,20 @@
+B3 – EXACT VS APPROXIMATE FEED OPTIMISATION
+
+Small-instance comparison:
+[{'seed': 1, 'lambda': 0.3, 'exact_cost': 8.77, 'exact_quality': 1, 'exact_cache': 1, 'approx_cost': 8.77, 'approx_quality': 1, 'approx_cache': 1, 'match': True, 'exact_configurations': 16, 'approx_evaluations': 10, 'quality_changes': 1, 'cache_evictions': 1}, {'seed': 2, 'lambda': 1.0, 'exact_cost': 15.2333, 'exact_quality': 1, 'exact_cache': 1, 'approx_cost': 15.2333, 'approx_quality': 1, 'approx_cache': 1, 'match': True, 'exact_configurations': 16, 'approx_evaluations': 10, 'quality_changes': 1, 'cache_evictions': 1}, {'seed': 3, 'lambda': 0.05, 'exact_cost': 6.0533, 'exact_quality': 2, 'exact_cache': 4, 'approx_cost': 6.0533, 'approx_quality': 2, 'approx_cache': 4, 'match': True, 'exact_configurations': 16, 'approx_evaluations': 12, 'quality_changes': 0, 'cache_evictions': 0}]
+
+Counterexample:
+{'seed': 2, 'lambda': 0.1, 'exact_cost': 6.9233, 'exact_quality': 1, 'exact_cache': 1, 'approx_cost': 7.23, 'approx_quality': 2, 'approx_cache': 3, 'path': '[(2, 2, 7.3867), (2, 3, 7.23)]', 'evaluations': 9}
+
+Adaptive path:
+The greedy search changes one coordinate at a time and stops when no orthogonal neighbour improves cost.
+For seed 2 and lambda 0.1 it moves from (2,2) to (2,3), then stops at a local minimum.
+The exact optimum is (1,1), which requires a diagonal combination of changes.
+
+Scaling:
+[{'items': 50, 'quality_levels': 4, 'cache_sizes': 4, 'exact_configurations_evaluated': 16, 'exact_item_evaluations': 800, 'adaptive_configurations_evaluated': 10, 'adaptive_item_evaluations': 500, 'quality_changes': 1, 'cache_evictions': 1, 'adaptive_to_exact_cost_ratio': 1.0}, {'items': 200, 'quality_levels': 8, 'cache_sizes': 8, 'exact_configurations_evaluated': 64, 'exact_item_evaluations': 12800, 'adaptive_configurations_evaluated': 10, 'adaptive_item_evaluations': 2000, 'quality_changes': 1, 'cache_evictions': 1, 'adaptive_to_exact_cost_ratio': 1.0}, {'items': 1000, 'quality_levels': 16, 'cache_sizes': 16, 'exact_configurations_evaluated': 256, 'exact_item_evaluations': 256000, 'adaptive_configurations_evaluated': 10, 'adaptive_item_evaluations': 10000, 'quality_changes': 1, 'cache_evictions': 1, 'adaptive_to_exact_cost_ratio': 1.0}]
+
+Trade-off:
+Exact search guarantees the best configuration within the enumerated finite search space, but evaluates every configuration.
+Greedy search evaluates fewer configurations and can react quickly, but has no global optimality guarantee.
+A live scrolling feed can accept a near-optimal adaptive configuration to protect frame responsiveness.

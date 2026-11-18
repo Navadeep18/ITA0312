@@ -1,0 +1,6 @@
+device,profile,battery_percent,bandwidth_mbps,heuristic_resolution,heuristic_bitrate_mbps,estimated_energy_j,estimated_time_s,battery_impact_percent,upload_timing,heuristic_cost,exhaustive_best_resolution,exhaustive_best_bitrate_mbps,exhaustive_best_cost,matches_exhaustive
+D1,flagship Wi-Fi,80,10.0,720,5,18.5,9.0,0.044,now,31.0,720,2.5,29.0,False
+D2,mid-range LTE,55,6.0,720,2.5,24.48,9.17,0.059,now,41.06,480,1,35.75,False
+D3,low-end slow uplink,60,1.5,720,1,30.81,12.38,0.074,defer to Wi-Fi,53.0,480,1,51.71,False
+D4,low battery Wi-Fi,12,10.0,480,1,5.4,3.0,0.013,defer to Wi-Fi/charging,30.9,720,2.5,29.0,False
+D5,flagship slow uplink,65,2.0,720,1,22.4,9.0,0.054,now,42.9,720,1,42.9,True

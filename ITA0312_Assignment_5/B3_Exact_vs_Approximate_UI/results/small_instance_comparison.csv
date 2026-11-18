@@ -1,0 +1,4 @@
+seed,lambda,exact_cost,exact_quality,exact_cache,approx_cost,approx_quality,approx_cache,match,exact_configurations,approx_evaluations,quality_changes,cache_evictions
+1,0.3,8.77,1,1,8.77,1,1,True,16,10,1,1
+2,1.0,15.2333,1,1,15.2333,1,1,True,16,10,1,1
+3,0.05,6.0533,2,4,6.0533,2,4,True,16,12,0,0

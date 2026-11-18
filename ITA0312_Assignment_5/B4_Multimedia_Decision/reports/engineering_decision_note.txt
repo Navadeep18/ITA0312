@@ -1,0 +1,30 @@
+B4 – MULTIMEDIA FRAMEWORK ENGINEERING DECISION NOTE
+
+Selection rule:
+1. If battery is below 20%, select 480p/1 Mbps and defer upload.
+2. Otherwise select the highest resolution whose estimated encode time is <= 6 seconds.
+3. Select the largest bitrate in {1, 2.5, 5} Mbps not exceeding 60% of measured bandwidth.
+4. Upload now only if bandwidth >= 2 Mbps and battery >= 20%; otherwise defer.
+
+Why not exhaustive at production scale:
+Resolution x bitrate x codec x profile x upload timing creates a large search space. Evaluating
+every option for thousands of changing device/network profiles consumes compute and makes
+the decision stale.
+
+Guarantee:
+The heuristic is not globally optimal. It applies simple safety rules, but the device comparisons
+show that independent thresholds can miss interactions between energy, quality, CPU and network.
+
+Advantage:
+A few comparisons produce a fast decision, avoiding a full search for every clip.
+
+When exact/cloud-assisted methods are appropriate:
+Premium or long clips, periodic offline tuning from fleet telemetry, or server-side transcoding for
+devices with weak encoding capability.
+
+Monitor before production:
+Upload success rate, p95 encode/upload time, battery drain per clip by device class, thermal
+throttling, quality complaints, deferred-upload share, and A/B results against a fixed-quality baseline.
+
+All energy and time values in this experiment are outputs of the assignment's simplified model,
+not physical phone measurements.

@@ -1,0 +1,2 @@
+seed,lambda,exact_cost,exact_quality,exact_cache,approx_cost,approx_quality,approx_cache,path,evaluations
+2,0.1,6.9233,1,1,7.23,2,3,"[(2, 2, 7.3867), (2, 3, 7.23)]",9

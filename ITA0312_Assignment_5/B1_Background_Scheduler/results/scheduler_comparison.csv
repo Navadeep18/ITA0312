@@ -1,0 +1,7 @@
+scenario,policy,enqueued,deferred_evaluations,cancelled,successful_executions,peak_concurrent_workers,final_backlog,critical_item_latencies
+good,FIFO,12,0,0,12,2,0,"[0, 0, 0]"
+good,PRIORITY,12,0,0,12,2,0,"[0, 0, 0]"
+lowdoze,FIFO,12,50,0,8,3,4,"[0, 1, 1]"
+lowdoze,PRIORITY,12,82,0,7,3,5,"[0, 0, 0]"
+permission,FIFO,12,0,4,8,2,0,"[0, 0, null]"
+permission,PRIORITY,12,0,4,8,2,0,"[0, 0, null]"
