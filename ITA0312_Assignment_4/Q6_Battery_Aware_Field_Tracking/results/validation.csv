@@ -1,0 +1,4 @@
+scenario,policy_interval_s,policy_samples_per_hour,baseline_interval_s,baseline_samples_per_hour,policy_upload,policy_state
+Charging WiFi moving,30,120.0,10,360.0,UPLOAD_NOW,CHARGING
+High battery LTE moving,60,60.0,10,360.0,UPLOAD_BATCH_IF_QUEUE_HIGH,NORMAL
+Low battery stationary LTE,180,20.0,10,360.0,DEFER_UNTIL_WIFI_OR_CHARGING,LOW

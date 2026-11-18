@@ -1,0 +1,53 @@
+{
+  "runtime": "3.13.18",
+  "cold_start_proxy_seconds": 0.015459251999914159,
+  "warm_cpu_seconds": [
+    0.17727438400004303,
+    0.1801846299999852,
+    0.18412372700004198,
+    0.16958569799999168,
+    0.17013406500007022
+  ],
+  "allocation_seconds": 1.0515979120000338,
+  "list_rendering_proxy_seconds": 0.5307157579999284,
+  "tracemalloc_current_bytes": 71434938,
+  "tracemalloc_peak_bytes": 71434986,
+  "tracemalloc_after_cleanup_bytes": 456,
+  "gc_count_before": [
+    611,
+    7,
+    7
+  ],
+  "gc_count_after": [
+    0,
+    0,
+    0
+  ],
+  "bounded_retained_bytes_before_release": 8000000,
+  "adb_evidence": [
+    {
+      "command": "adb shell cmd package compile -m verify -f YOUR.PACKAGE.NAME",
+      "returncode": 127,
+      "stdout": "",
+      "stderr": "/bin/sh: 1: adb: not found\n"
+    },
+    {
+      "command": "adb shell cmd package compile -m speed-profile -f YOUR.PACKAGE.NAME",
+      "returncode": 127,
+      "stdout": "",
+      "stderr": "/bin/sh: 1: adb: not found\n"
+    },
+    {
+      "command": "adb logcat -d -s art:D",
+      "returncode": 127,
+      "stdout": "",
+      "stderr": "/bin/sh: 1: adb: not found\n"
+    },
+    {
+      "command": "adb shell dumpsys meminfo YOUR.PACKAGE.NAME",
+      "returncode": 127,
+      "stdout": "",
+      "stderr": "/bin/sh: 1: adb: not found\n"
+    }
+  ]
+}

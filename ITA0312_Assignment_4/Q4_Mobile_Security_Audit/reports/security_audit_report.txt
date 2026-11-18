@@ -1,0 +1,34 @@
+MOBILE APPLICATION SECURITY AUDIT
+=======================================================
+Initial verdict: NEEDS REMEDIATION
+
+Initial decisions:
+              Asset                                               Threat                                                                 Mechanism applied          Decision                                                                                               Reason
+         Auth token                          Stolen authentication token         Encrypted token storage; short-lived access token; server-side revocation           Blocked                                                   Configured control is present in the design model.
+Application package                         Modified application package APK signing and signature verification; verified boot supports platform integrity           Blocked                                                   Configured control is present in the design model.
+          Audit log                User denies changing a patient record            Server-side audit trail with timestamp and authenticated user identity           Blocked                                                   Configured control is present in the design model.
+   Patient database                    Local database copied from device                        App sandbox, encrypted database and Keystore-protected key           Blocked                                                   Configured control is present in the design model.
+           REST API              Repeated requests exhaust API resources                          Rate limiting, request quotas and bounded client retries           Blocked                                                   Configured control is present in the design model.
+           Activity Malicious app launches an exported internal activity        Set internal activity exported=false; validate caller and deep-link inputs Partially Blocked Component is exported; external invocation may be possible. Add authorization and intent validation.
+        API traffic                       Network observer reads traffic                              TLS certificate validation; reject cleartext traffic           Exposed                                                           At least one endpoint uses cleartext HTTP.
+    Camera/location                  Fake camera/location permission use             Request runtime permission only when feature is used; explain purpose           Blocked                                                   Configured control is present in the design model.
+
+Weakened-control experiment:
+              Asset          Decision                                                                                               Reason
+         Auth token           Exposed                                        Token storage is not protected by Keystore-backed encryption.
+Application package           Blocked                                                   Configured control is present in the design model.
+          Audit log           Blocked                                                   Configured control is present in the design model.
+   Patient database           Blocked                                                   Configured control is present in the design model.
+           REST API           Blocked                                                   Configured control is present in the design model.
+           Activity Partially Blocked Component is exported; external invocation may be possible. Add authorization and intent validation.
+        API traffic           Exposed                                                           At least one endpoint uses cleartext HTTP.
+    Camera/location           Blocked                                                   Configured control is present in the design model.
+
+Incident challenge:
+A third-party SDK sending a device identifier over HTTP exposes the identifier to observers on the network.
+Sandboxing limits access to local app data but does not prevent the app itself from transmitting data.
+Detect using static endpoint inspection, proxy/network capture in an authorised test, and runtime network logs.
+Remediation: remove the HTTP endpoint, require TLS certificate validation, minimise identifiers and audit SDK traffic.
+
+Engineering extension:
+Biometric login should bind key use to user authentication where supported. BYOD/work-profile mode requires separate managed data, policy enforcement, key attestation where available, and remote wipe of managed data.

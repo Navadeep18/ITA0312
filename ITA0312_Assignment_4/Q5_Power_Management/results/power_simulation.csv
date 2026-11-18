@@ -1,0 +1,41 @@
+hour,technique,cpu_estimated_mAh,radio_estimated_mAh,total_estimated_mAh,wakeups,cumulative_mAh,responsiveness
+1,baseline,110.0,1.0799999999999998,111.08,60,111.08,High
+2,baseline,110.0,1.0799999999999998,111.08,60,222.16,High
+3,baseline,110.0,1.0799999999999998,111.08,60,333.24,High
+4,baseline,110.0,1.0799999999999998,111.08,60,444.32,High
+5,baseline,110.0,1.0799999999999998,111.08,60,555.4,High
+6,baseline,110.0,1.0799999999999998,111.08,60,666.48,High
+7,baseline,110.0,1.0799999999999998,111.08,60,777.5600000000001,High
+8,baseline,110.0,1.0799999999999998,111.08,60,888.6400000000001,High
+1,dvfs,79.2,1.0799999999999998,80.28,60,80.28,Moderate
+2,dvfs,79.2,1.0799999999999998,80.28,60,160.56,Moderate
+3,dvfs,79.2,1.0799999999999998,80.28,60,240.84,Moderate
+4,dvfs,79.2,1.0799999999999998,80.28,60,321.12,Moderate
+5,dvfs,79.2,1.0799999999999998,80.28,60,401.4,Moderate
+6,dvfs,79.2,1.0799999999999998,80.28,60,481.67999999999995,Moderate
+7,dvfs,79.2,1.0799999999999998,80.28,60,561.9599999999999,Moderate
+8,dvfs,79.2,1.0799999999999998,80.28,60,642.2399999999999,Moderate
+1,doze,49.5,0.144,49.644,8,49.644,Delayed background work
+2,doze,49.5,0.144,49.644,8,99.288,Delayed background work
+3,doze,49.5,0.144,49.644,8,148.932,Delayed background work
+4,doze,49.5,0.144,49.644,8,198.576,Delayed background work
+5,doze,49.5,0.144,49.644,8,248.22,Delayed background work
+6,doze,49.5,0.144,49.644,8,297.864,Delayed background work
+7,doze,49.5,0.144,49.644,8,347.508,Delayed background work
+8,doze,49.5,0.144,49.644,8,397.152,Delayed background work
+1,batching,68.2,0.10799999999999998,68.308,6,68.308,Uploads delayed to batch window
+2,batching,68.2,0.10799999999999998,68.308,6,136.616,Uploads delayed to batch window
+3,batching,68.2,0.10799999999999998,68.308,6,204.92400000000004,Uploads delayed to batch window
+4,batching,68.2,0.10799999999999998,68.308,6,273.232,Uploads delayed to batch window
+5,batching,68.2,0.10799999999999998,68.308,6,341.54,Uploads delayed to batch window
+6,batching,68.2,0.10799999999999998,68.308,6,409.848,Uploads delayed to batch window
+7,batching,68.2,0.10799999999999998,68.308,6,478.156,Uploads delayed to batch window
+8,batching,68.2,0.10799999999999998,68.308,6,546.464,Uploads delayed to batch window
+1,wakelock_conflict,101.2,1.0799999999999998,102.28,60,102.28,Responsive but inefficient
+2,wakelock_conflict,101.2,1.0799999999999998,102.28,60,204.56,Responsive but inefficient
+3,wakelock_conflict,101.2,1.0799999999999998,102.28,60,306.84000000000003,Responsive but inefficient
+4,wakelock_conflict,101.2,1.0799999999999998,102.28,60,409.12,Responsive but inefficient
+5,wakelock_conflict,101.2,1.0799999999999998,102.28,60,511.4,Responsive but inefficient
+6,wakelock_conflict,101.2,1.0799999999999998,102.28,60,613.68,Responsive but inefficient
+7,wakelock_conflict,101.2,1.0799999999999998,102.28,60,715.9599999999999,Responsive but inefficient
+8,wakelock_conflict,101.2,1.0799999999999998,102.28,60,818.2399999999999,Responsive but inefficient

@@ -1,0 +1,6 @@
+technique,total_estimated_mAh,total_wakeups
+baseline,888.64,480
+batching,546.464,48
+doze,397.152,64
+dvfs,642.24,480
+wakelock_conflict,818.24,480

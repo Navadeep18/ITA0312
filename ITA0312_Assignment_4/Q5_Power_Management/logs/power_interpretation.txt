@@ -1,0 +1,12 @@
+POWER MANAGEMENT EXPERIMENT
+Model duration: 8 hours
+DVFS: reduces the assumed CPU energy factor while preserving frequent work.
+Doze: reduces background wakeups and defers non-urgent work.
+Batching: coalesces network activity into fewer radio wakeups.
+Stress case: wakelock_conflict keeps the device awake and removes much of the Doze benefit.
+
+Doze estimated energy: 397.15 mAh
+Wakelock-conflict estimated energy: 818.24 mAh
+
+These are model estimates, not physical battery measurements. Actual DVFS frequency, voltage,
+Doze state, wakelock duration and radio-active time require Android device instrumentation.

@@ -1,0 +1,8 @@
+name,battery,charging,network,motion,temp,queue,policy_state,sampling_interval_seconds,upload_action,estimated_energy_mAh_per_cycle,encrypted_before_queue,authenticated_TLS_required,encrypted_record_bytes
+Charging WiFi moving,85,True,WIFI,MOVING,33,20,CHARGING,30,UPLOAD_NOW,0.021,True,True,185
+High battery LTE moving,80,False,CELLULAR,MOVING,34,5,NORMAL,60,UPLOAD_BATCH_IF_QUEUE_HIGH,0.005,True,True,188
+Low battery stationary LTE,18,False,CELLULAR,STILL,35,120,LOW,180,DEFER_UNTIL_WIFI_OR_CHARGING,0.006,True,True,190
+Low power no network,14,False,NONE,STILL,36,80,CRITICAL,300,QUEUE_CRITICAL_BATTERY,0.005,True,True,183
+Hot device WiFi,55,False,WIFI,MOVING,44,35,HOT,180,DEFER_COOL_DOWN,0.005,True,True,180
+Normal battery no network,60,False,NONE,MOVING,32,45,NORMAL,60,QUEUE_OFFLINE,0.005,True,True,190
+Charging cellular stationary,25,True,CELLULAR,STILL,31,200,CHARGING,90,UPLOAD_NOW,0.024,True,True,192

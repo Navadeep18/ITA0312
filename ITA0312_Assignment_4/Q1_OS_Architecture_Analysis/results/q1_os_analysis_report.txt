@@ -1,0 +1,45 @@
+MOBILE OS ARCHITECTURE ANALYSIS
+============================================================
+Host OS: Linux-6.6.159+-x86_64-with-glibc2.39
+Colab host is not an Android device; host information is not Android evidence.
+
+LAYER MODEL
+
+Android
+- Applications: Activities, services, receivers and providers
+- Application framework: ActivityManager, PackageManager, WindowManager, PowerManager; Binder APIs
+- ART: DEX execution, JIT/AOT compilation, garbage collection and JNI
+- Native libraries: Bionic, SQLite, graphics, media and cryptography libraries
+- HAL: Stable interfaces between framework services and vendor hardware
+- Linux kernel: Scheduler, virtual memory, Binder driver, networking, security and device drivers
+- Hardware: CPU, memory, display, modem, sensors and storage
+
+iOS
+- Cocoa Touch: UIKit, application lifecycle and user interaction
+- Media: Core Graphics, Core Animation, AVFoundation and Metal
+- Core Services: Foundation, Core Data, networking and other system services
+- Core OS: Darwin/XNU, security, file system, networking and low-level services
+- Hardware: Apple SoC, memory, display, radios and sensors
+
+ANDROID LIVE EVIDENCE
+{
+  "label": "ADB availability",
+  "command": "adb version",
+  "returncode": 127,
+  "stdout": "",
+  "stderr": "/bin/sh: 1: adb: not found\n"
+}
+ADB is unavailable or no Android device is attached.
+Run the listed commands on a computer with Android Platform Tools and USB debugging.
+
+PROCESS / IPC INTERPRETATION
+- Android app processes are commonly created by zygote; the Linux kernel schedules and isolates them.
+- Binder is the principal Android framework IPC mechanism; /dev/binder is useful supporting evidence.
+- iOS applications are launched under launchd and commonly use XPC/Mach messaging for system IPC.
+- Android lifecycle evidence should be captured from Activity/Service callbacks in a test application.
+- iOS lifecycle evidence requires an iOS device/simulator and Xcode tooling; Colab cannot collect it.
+
+BOUNDARY TEST
+Rotate the device while a form contains unsaved input, then background and restore the app.
+Expected check: state is restored from saved instance state or persistent storage; transient UI state
+must not be assumed to survive process death.

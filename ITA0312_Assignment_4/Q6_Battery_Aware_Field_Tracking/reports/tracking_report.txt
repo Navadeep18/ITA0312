@@ -1,0 +1,16 @@
+BATTERY-AWARE SECURE FIELD TRACKING
+Inputs: battery level, charging state, network, motion, temperature and queued-record count.
+Output: sampling interval and upload action.
+Objective: deliver useful tracking records per unit of energy while protecting data.
+
+Security:
+- Each record is encrypted with AES-GCM before it is queued.
+- The demo key is generated in memory for this run. It is NOT Android Keystore persistence.
+- Upload is marked as requiring authenticated TLS; no real server transfer is performed.
+
+Validation compares adaptive sampling with an illustrative always-on 10-second baseline.
+Scalability counts policy evaluations and queued records at increasing input sizes.
+Energy figures are transparent estimates, not measured phone mAh.
+
+Trade-off: emergency real-time mode should override battery-saving intervals, use a justified
+foreground tracking mode and accept higher energy use, heat and privacy exposure.

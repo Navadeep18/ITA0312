@@ -1,0 +1,4 @@
+workload,seconds,detail
+CPU loop,0.17626050080002642,5 warm iterations
+Object allocation,1.0515979120000338,"250,000 objects"
+List filtering,0.5307157579999284,"100,000 rows"
